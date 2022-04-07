@@ -1,36 +1,7 @@
-const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
-const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
+// Se trae el modulo de crudExper.. para obtener lo que se exporta de ese modulo
 
-const serviceAccount = require('./pruebaweb1-c24e7-dc2f0a1642a7.json');
+const db = require('./src/db/crudExperts.js');
 
-initializeApp({
-  credential: cert(serviceAccount)
-});
+// aca se llama la promesa que se dio en el modulo de crud Experts
+// db.getExperts();
 
-const db = getFirestore();
-
-// CONsulta para añadir un experto
-
-var services ={
-    Name: "Ingeniero electronico",
-    Description:"Hago muy buenos microchips",
-    Expirience: 10,
-    photo: ["www. 123.com"]
-}
-db.collection("experts").add({
-    Name: "Luis",
-    Location: "Bogota, Cundinamarca COL",
-    services: [services],
-    Cel: "23432453",
-    DNI: "3453452234",
-    Bio: "Soy ingeniero electronico....",
-    ContactLink:"fsjdfljsa.com",
-    Ocupation:"Ing. Elctric in M<INTIC",
-    Photoperfil: "www.jfsakhf.com",
-})
-.then((doc)=>{
-    console.log(`Docuemnto registrado con el id ${doc.id}`);
-})
-.catch((Error)=>{
-    console.log("Error at moment insert data", Error);
-})
