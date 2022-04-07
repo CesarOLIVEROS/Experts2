@@ -12,5 +12,8 @@
     "backend"
   ],
   "author": "Cesar Oliveros",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^10.0.2"
+  }
 }
