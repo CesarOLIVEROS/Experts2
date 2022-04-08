@@ -13,24 +13,23 @@ const db = require('./src/db/crudExperts.js');
 
 app.get('/', function (req, res) {
     res.send('Hello World my dad')
-  })
+  });
 
-  // en una nueva ruta no debe llevar el punto
-app.get('/nueva-ruta', (req, res)=>{
-    res.send('Esta es una nueva ruta en el servidor de Express')
+  // metodo para traer todos los expertos en un array
+app.get('/get-experts', (req, res)=>{
+    db.getExperts(function(arrayExperts){
+        res.send(arrayExperts);
+    });
 })
 
-app.get('/get-expert/:id', (req,res) =>{
+// metodo para traer solo un experto pasando el id.
+app.get('/get-expert/:id', (req, res)=>{
     const eid = req.params.id;
-    res.send("Se consultó el documento " + eid);
+    db.getExpert(eid, function(doc){
+        res.send(doc);
+    });
 })
 
-app.get('/get-user', (req, res)=>{
-    res.json({
-        "Name" : 'Carolina',
-        "DNi": 234324,
-    })
-})
 
 app.listen(port, ()=>{
     console.log('my port is listening ' + port);
