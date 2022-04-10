@@ -93,11 +93,28 @@ function deleteExpert(eid, callback){
     })
 }
 
+// BUSCAR POR CATEGORIA O CARACTERISTICA UN EXPERTO
+
+function searchExpert(Location, callback){
+    return db.collection('experts').where("Location", "==", Location).get()
+    .then((refDoc)=>{
+        var arrayExperts = [];
+        refDoc.forEach(doc => {
+            arrayExperts.push(doc.data);
+        })
+        callback(arrayExperts);
+    })
+    .catch((error)=>{
+        callback('Error to search Expert en data base', error)
+    })
+}
+
 module.exports ={
     getExperts,
     getExpert,
     addExpert,
     updateExpertTotally,
     updateExpertPartial,
-    deleteExpert
+    deleteExpert,
+    searchExpert
 } 
