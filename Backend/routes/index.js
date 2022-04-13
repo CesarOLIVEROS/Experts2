@@ -1,6 +1,6 @@
 const routerExpert = require('./expertsRouter.js');
 const routerUsers = require('./usersRouter.js');
-
+const routerMockExperts = require('./mockExpertsRouters.js')
 
 // se crea este archivo para añadir a cada archivo su otra ruta correspondiente
 // siendo asi esta exportada para que sea consumida por el index principal
@@ -12,6 +12,7 @@ function routersAPI(app){
 
     app.use('/experts', routerExpert);
     app.use('/users', routerUsers);
+    app.use('/mock/experts', routerMockExperts);
 }
 
 module.exports = routersAPI;
