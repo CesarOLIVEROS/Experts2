@@ -1,16 +1,24 @@
 import React from "react";
-import ButtonOk from "./components/ButtonOK";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./screens/Home";
+import Landing from "./screens/Landing";
+import SearchResults from "./screens/SearchResults";
+import NotFound from './screens/NotFound';
+import Register from './screens/Register';
 
 function App() {
   return (
-  <React.Fragment>
-
-    <h1>Estudiantes, MINTIC!</h1>
-  
-    <h2>Grupo de desarrollo</h2>
-    <ButtonOk/>
-  </React.Fragment>
-  );
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Landing />}/>
+      <Route path='/home' element={<Home/>}/>
+      <Route path='/search-results' element={<SearchResults/>}/>
+      <Route path='/register' element={<Register/>}/>
+      <Route path="*" element={<NotFound/>}/>
+      
+    </Routes>
+    
+    </BrowserRouter>);
 }
 
 export default App;
