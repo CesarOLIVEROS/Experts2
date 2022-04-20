@@ -1,9 +1,14 @@
 import React from 'react'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import UserHome from '../components/UserHome';
+
+
 const Home = () => {
   return (
     <>
-      <div>Hola primer pagina</div>
+      
+      <UserHome/>
     </>
   )
 }
