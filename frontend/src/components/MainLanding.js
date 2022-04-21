@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import LandingTopic from './LandingTopic';
 import SigInButton from './SigInButton';
 
 const MainLanding = () => {
@@ -41,6 +42,7 @@ const MainLanding = () => {
                     
                 </Carousel.Item>
             </Carousel>
+            <LandingTopic/>
         </>
     )
 }
