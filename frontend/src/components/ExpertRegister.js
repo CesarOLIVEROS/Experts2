@@ -1,12 +1,12 @@
 import React from 'react'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Container, Row, Col} from 'react-bootstrap'
 
 
 const ExpertRegister = () => {
     return (
         <>
             <div>
-                <h1 style={{ textAlign: "center" }}> Registrate !!!</h1>
+                <h1 style={{ textAlign: "center" }}> Registrate !!!</h1></div>
 
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -37,14 +37,29 @@ const ExpertRegister = () => {
                         <Form.Control as="textarea" rows={3} type="text" placeholder='Escribe una breve reseña tuya'/>
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" style={{ margin: 10 }}>
-                        Enviar
-                    </Button>
+                    <Form.Group className="mb-3" controlId="formBasicContact">
+                        <Form.Label>Link de Contacto</Form.Label>
+                        <Form.Control type="text" rows={3} placeholder='Ingresa el link de contacto de tu preferencia'/>
+                    </Form.Group>
 
+                    <Form.Group className="mb-3" controlId="formBasicOccupation">
+                        <Form.Label>Ocupación</Form.Label>
+                        <Form.Control type="text" rows={3} placeholder='Ingresa tu ocupación'/>
+                    </Form.Group>
 
+                    <Container className="col-md-5 mx-auto">
+                        <Row>
+                            <Col>
+                            <Button variant="dark" type="submit" >
+                                Enviar
+                            </Button>
+                            
+                            </Col>
+                        </Row>
 
+                    </Container>
                 </Form>
-            </div>
+     
         </>
     )
 }

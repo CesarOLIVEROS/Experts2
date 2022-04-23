@@ -1,11 +1,17 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Results from '../components/Results';
+
 
 const Searchresults = () => {
     return (
-        <div>
-            Search....
-            
-        </div>
+        <Container>
+            <Row>
+                <Col>
+                    <Results/>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 

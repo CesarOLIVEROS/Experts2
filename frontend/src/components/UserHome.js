@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Row, Col, Stack, Imaga } from 'react-bootstrap';
+import { Container, Row, Col, Stack} from 'react-bootstrap';
 
 
 
