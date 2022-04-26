@@ -18,7 +18,6 @@ function App() {
       <Route path='/' element={<Landing />}/>
       <Route path='/home' element={<Home />}/>
       <Route path='/profile' element={<Profile />}/>
-      
       <Route path='/search-results' element={<SearchResults/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path="*" element={<NotFound/>}/>

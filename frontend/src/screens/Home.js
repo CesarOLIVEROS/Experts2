@@ -1,8 +1,9 @@
 import React from 'react'
+import { Navigate } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserHome from '../components/UserHome';
-import {Navigate } from "react-router-dom";
+//import ExpertHome from '../components/ExpertHome';
 
 const Home = () => {
   // usamos el Navigate para determinar el perfil del usuario que se extrajo del inicio de sesion 

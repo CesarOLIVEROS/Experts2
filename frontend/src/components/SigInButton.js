@@ -4,6 +4,7 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
+
 // Configure Firebase.
 const config = {
   // Api Key configurada en el proyecto de la firebase

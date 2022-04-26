@@ -1,22 +1,25 @@
 import React from 'react';
 import { Navbar, Nav, Container, Image } from "react-bootstrap";
 
+
+const logOut = () => {
+  localStorage.clear("user");
+};
+
 const NavBar = () => {
   var user = JSON.parse(localStorage.getItem("user"));
   var navLinks = (
     <Nav>
       <Nav.Link href="/home">Inicio</Nav.Link>
       <Nav.Link href="/profile">Perfil</Nav.Link>
+       
       <Nav.Link href="https://fb.com">Facebook</Nav.Link>
       <Nav.Link href="https://instagram.com">Instagram</Nav.Link>
-      
+      <Nav.Link href="/" onClick={logOut}>Salir</Nav.Link>
     </Nav>
   );
 
-  const logOut = () => {
-    localStorage.clear("user");
-  };
-
+  
   if (user != undefined) {
     navLinks = (
       <Nav>
@@ -25,11 +28,12 @@ const NavBar = () => {
         </Nav.Link>
 
         <Nav.Link href="/home"><strong>{user.name}</strong></Nav.Link>
-              <Nav>
-              <Nav.Link href="/home">Inicio</Nav.Link>
-              <Nav.Link href="/profile">Perfil</Nav.Link>
-              
-              </Nav>
+        <Nav.Link href="/search-results">Search Results</Nav.Link>   
+          
+        <Nav.Link href="/home">Inicio</Nav.Link>
+        <Nav.Link href="/profile">Perfil</Nav.Link>
+        <Nav.Link href="/" onClick={logOut}>Salir</Nav.Link>
+          
       </Nav>
     );
   }
@@ -47,7 +51,7 @@ const NavBar = () => {
           >
             {navLinks}
             
-            <Nav.Link href="/" onClick={logOut}>Salir</Nav.Link>
+            
           </Navbar.Collapse>
         </Container>
       </Navbar>
