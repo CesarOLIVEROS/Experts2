@@ -1,27 +1,30 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Results from '../components/Results';
+
 import {Navigate } from "react-router-dom";
+import ResultList from '../components/ResultList';
 
 
-const Searchresults = () => {
-    // usamos el Navigate para determinar el perfil del usuario que se extrajo del inicio de sesion 
-    var component = <Navigate to="/" />;
-    // condicional para saber que pagina se debe renderizar luego de validar el local Storage
-    if (JSON.parse(localStorage.getItem('session')) != undefined) {
-        component = <Container>
+const SearchResults = () => {
+    var user = JSON.parse(localStorage.getItem("user"));
+    const city = localStorage.getItem("city");
+  
+    if (user == undefined) {
+      return <Navigate to="/" />;
+    } 
+
+    return (
+        <Container>
+            <Row>
+                <h1>Ciudad: {city}</h1>
+            </Row>
             <Row>
                 <Col>
-                    <Results />
+                    <ResultList/>
                 </Col>
             </Row>
         </Container>
-    }
-    return (
-        <>
-            {component}
-        </>
     );
 }
 
-export default Searchresults;
+export default SearchResults

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Profiler } from 'react'
 import { Tab, Col, Nav, Row, } from 'react-bootstrap'
+import ResultItem from './ResultItem'
 
 
 const Results = () => {
@@ -8,24 +9,34 @@ const Results = () => {
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
             <Row>
                 <Col sm={5}>
-                    <Nav variant="pills" className="flex-column">
-                        <Nav.Item>
-                            <Nav.Link eventKey="first">Tab 1</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                        </Nav.Item>
-                    </Nav>
+                    <ListGroup>
+                        <ListGroup.Item action href="#link1">
+                            <ResultItem/>
+                        </ListGroup.Item>
+                        <ListGroup.Item action href="#link2">
+                            <ResultItem/>
+                        </ListGroup.Item>
+                        <ListGroup.Item action href="#link3" >
+                            <ResultItem/>
+                        </ListGroup.Item>
+                        <ListGroup.Item action href="#link4" >
+                            <ResultItem/>
+                        </ListGroup.Item>
+                    </ListGroup>,
                 </Col>
                 <Col sm={7}>
                     <Tab.Content>
-                        <Tab.Pane eventKey="first">
-                        <h1>ACa se modifica el texto a mostrar de primero</h1>
-                            
+                        <Tab.Pane eventKey="#link1">
+                            <Profile/>
                         </Tab.Pane>
-                        <Tab.Pane eventKey="second">
-                            
-                        <h1>ACa se modifica el texto a mostrar de segundo</h1>
+                        <Tab.Pane eventKey="#link2">
+                            <Profile/>
+                        </Tab.Pane>
+                        <Tab.Pane eventKey="#link3">
+                            <Profile/>
+                        </Tab.Pane>
+                        <Tab.Pane eventKey="#link4">
+                            <Profile/>
                         </Tab.Pane>
                     </Tab.Content>
                 </Col>
