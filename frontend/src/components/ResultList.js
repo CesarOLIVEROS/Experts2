@@ -1,38 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Tab, Row, Col, ListGroup } from "react-bootstrap";
 
 import ResultItem from "./ResultItem";
 import Profile from "./Profile";
 
-import { searchExperts } from "../apis/crud";
+import { searchExpert } from "../apis/ExpertsCRUD";
 
-const ResultList = (props) => {
-  const [searchResults, setSearchResults] = useState([]);
+const ResultList = () => {
+  const city = localStorage.getItem("city");
+  searchExpert()
 
-  useEffect(() => {
-    searchExperts(props.city, setSearchResults);
-  }, []);
-
+ 
   return (
     <Tab.Container id="list-group-tabs-example">
       <Row>
         <Col sm={5}>
           <ListGroup>
-            {searchResults.map((result, index) => (
-              <ListGroup.Item action href={"#" + index}>
-                <ResultItem expertData={result} />
-              </ListGroup.Item>
-            ))}
+                <ResultItem/>
           </ListGroup>
         </Col>
 
         <Col sm={7}>
           <Tab.Content>
-            {searchResults.map((result, index) => (
-              <Tab.Pane eventKey={"#" + index}>
-                <Profile expertData={result} />
-              </Tab.Pane>
-            ))}
+            <ResultItem/>
           </Tab.Content>
         </Col>
       </Row>

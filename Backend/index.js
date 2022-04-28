@@ -3,10 +3,13 @@
 const routersAPI = require('./routes');
 // Importe la libreria de express
 const express = require('express');
+var cors = require('cors');
 const app = express();
 // creo constante para el puerto de ejecucion de node.js
-const port = 3000;
+const port = 5000;
 // para usar una forma de publicar que es estatico con express todo lo que no se desea mover
+app.use(cors());
+
 app.use(express.static('public'));
 app.use(express.json());
 
