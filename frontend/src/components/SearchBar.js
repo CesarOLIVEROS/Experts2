@@ -9,7 +9,7 @@ function SaveCity(city){
 }
 
   return (
-    <Dropdown>
+    <Dropdown className="align-items-center">
         <Dropdown.Toggle variant='secondary' id='dropdown-basic'>
             En donde necesitas a tu <strong>Experto</strong>
         </Dropdown.Toggle>

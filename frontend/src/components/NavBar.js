@@ -28,9 +28,7 @@ const NavBar = () => {
         </Nav.Link>
 
         <Nav.Link href="/home"><strong>{user.name}</strong></Nav.Link>
-        <Nav.Link href="/search-results">Search Results</Nav.Link>   
-          
-        <Nav.Link href="/home">Inicio</Nav.Link>
+            
         <Nav.Link href="/profile">Perfil</Nav.Link>
         <Nav.Link href="/" onClick={logOut}>Salir</Nav.Link>
           

@@ -39,7 +39,7 @@ const uiConfig = {
     // Avoid redirects after sign-in.
     signInSuccessWithAuthResult: (authResult) => {
       // Todo esto se guarda en el objeto con el fin de extraer de la local storage o la sesion iniciada la info del usuario
-      const objeto ={
+      const user ={
         name: authResult.user.displayName,
         email: authResult.user.email,
         img: authResult.user.photoURL,
@@ -47,7 +47,7 @@ const uiConfig = {
         isNew: authResult.additionalUserInfo,
       }
       // esto se extrae con comandos de la web => https://www.robinwieruch.de/local-storage-react/
-      localStorage.setItem('session', JSON.stringify(objeto));
+      localStorage.setItem('user', JSON.stringify(user));
             
       return true;
     },

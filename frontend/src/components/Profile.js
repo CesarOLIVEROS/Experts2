@@ -7,7 +7,7 @@ const Profile = () => {
     return (
         <Stack gap={2} className="align-items-center">
           <Image
-          src='https://google.com,png'
+          src='https://google.com.png'
           roundedCircle
           width="80px"
           height="80px"

@@ -12,17 +12,35 @@ const ResultList = () => {
 
  
   return (
-    <Tab.Container id="list-group-tabs-example">
+    <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
       <Row>
         <Col sm={5}>
-          <ListGroup>
-                <ResultItem/>
-          </ListGroup>
+          <ListGroup.Item action href="#link1">
+                <ResultItem />
+          </ListGroup.Item>
+          <ListGroup.Item action href="#link2">
+                <ResultItem />
+          </ListGroup.Item>
+
+          <ListGroup.Item action href="#link3">
+                <ResultItem />
+          </ListGroup.Item>
+
+          <ListGroup.Item action href="#link4">
+                <ResultItem />
+          </ListGroup.Item>
+
         </Col>
 
         <Col sm={7}>
           <Tab.Content>
-            <ResultItem/>
+            <Tab.Pane eventKey="#link1"><Profile/></Tab.Pane>
+            
+            <Tab.Pane eventKey="#link2"><Profile/></Tab.Pane>
+
+            <Tab.Pane eventKey="#link3"><Profile/></Tab.Pane>
+
+            <Tab.Pane eventKey="#link3"><Profile/></Tab.Pane>
           </Tab.Content>
         </Col>
       </Row>
