@@ -12,6 +12,7 @@ const router = express.Router();
 
 // metodo para traer todos los expertos en un array
 router.get('/', (req, res) => {
+    
     dbE.getExperts(function (arrayExperts) {
         res.send(arrayExperts);
     });

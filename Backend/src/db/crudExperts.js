@@ -1,4 +1,3 @@
-const e = require('express');
 const db = require('./firebase.js');
 
 // Para obtener los datos se extraen dentro de una promesa
@@ -100,7 +99,7 @@ function searchExpert(Location, callback){
     .then((refDoc)=>{
         var arrayExperts = [];
         refDoc.forEach(doc => {
-            arrayExperts.push(doc.data);
+            arrayExperts.push(doc.data());
         })
         callback(arrayExperts);
     })

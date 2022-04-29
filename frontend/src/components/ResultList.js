@@ -40,7 +40,7 @@ const ResultList = () => {
 
             <Tab.Pane eventKey="#link3"><Profile/></Tab.Pane>
 
-            <Tab.Pane eventKey="#link3"><Profile/></Tab.Pane>
+            <Tab.Pane eventKey="#link4"><Profile/></Tab.Pane>
           </Tab.Content>
         </Col>
       </Row>

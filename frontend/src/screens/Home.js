@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserHome from '../components/UserHome';
-import SearchBar from '../components/SearchBar';
+
 //import ExpertHome from '../components/ExpertHome';
 
 const Home = () => {
