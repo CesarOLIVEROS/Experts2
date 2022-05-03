@@ -8,7 +8,9 @@ import { searchExpert } from "../apis/ExpertsCRUD";
 
 const ResultList = () => {
   const city = localStorage.getItem("city");
-  searchExpert()
+  searchExpert(city, (res)=>{
+    console.log(res);
+  })
 
  
   return (
