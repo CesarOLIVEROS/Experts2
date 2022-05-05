@@ -2,26 +2,31 @@ import React from "react";
 import { Stack, Image } from "react-bootstrap";
 import { Battery } from "react-bootstrap-icons";
 
-const ResultItem = () => {
+// uso el props para pasar la info que ya traigo desde el ResultList y luego le paso alla el dato o lo que deseo que use
+const ResultItem = (props) => {
     
     return (
     <Stack gap={4} direction="horizontal">
       <Image
-        src="https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg"
+        src={props.data.picture}
         roundedCircle
         width="60px"
         height="60px"
       />
       <div>
-        <h5>Jorge Luis H</h5>
+        <h5>{props.data.name}</h5>
 
         <Stack gap={2} direction="horizontal">
          <Battery/> 
         </Stack>
+        <Stack gap={2} direction="horizontal">
+          
+          <div>{props.data.Location}</div>
+        </Stack>
 
         <Stack gap={2} direction="horizontal">
           
-          <div>Clases de Programación</div>
+          <div>{props.data.occupation}</div>
         </Stack>
       </div>
     </Stack>

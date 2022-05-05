@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Row, Col, Stack, Dropdown} from 'react-bootstrap';
+import { Container, Row, Col, Stack} from 'react-bootstrap';
 import { Battery } from 'react-bootstrap-icons';
 
 import SearchBar from './SearchBar';

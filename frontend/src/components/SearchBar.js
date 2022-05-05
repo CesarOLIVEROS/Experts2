@@ -17,7 +17,7 @@ function SaveCity(city){
         <Dropdown.Menu>
             <Dropdown.Item href={redirectUrl} onClick ={() =>{SaveCity("Paris")}}>Paris</Dropdown.Item>
             <Dropdown.Item href={redirectUrl} onClick ={() =>{SaveCity("Londres")}}>Londres</Dropdown.Item>
-            <Dropdown.Item href={redirectUrl} onClick ={() =>{SaveCity("Cartagena")}}>Cartagena</Dropdown.Item>
+            <Dropdown.Item href={redirectUrl} onClick ={() =>{SaveCity("Colombia")}}>Colombia</Dropdown.Item>
             <Dropdown.Item href={redirectUrl} onClick ={() =>{SaveCity("ChileS")}}>Chile</Dropdown.Item>
         </Dropdown.Menu>
     </Dropdown>

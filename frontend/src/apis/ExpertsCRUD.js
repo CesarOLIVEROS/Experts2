@@ -6,7 +6,7 @@ const URL = "http://localhost:5000";
 export function searchExpert(city, callback){
     axios.get(URL + "/experts/search/" + city)
     .then((res) =>{
-        callback(res);
+        callback(res.data);
     })
     .catch((error)=>{
        callback(error);
